@@ -4,20 +4,22 @@ public class Enemigo : MonoBehaviour
 {
     public float velocidad = 2f;
     public int vida = 3;
-    private Vector3 direccion;
 
+    [SerializeField] private Vector3 offset = new Vector3(0, -1.5f, 0); // Editable en el editor
     public float velocidadRotacion = 90f; // grados por segundo
+
+    private Vector3 direccion;
 
     void Start()
     {
         GameObject nave = GameObject.FindGameObjectWithTag("navesita");
         if (nave != null)
         {
-            direccion = nave.transform.position;  // se guarda la posición al momento del spawn
+            direccion = nave.transform.position + offset;
         }
         else
         {
-            direccion = Vector3.zero;  // valor por defecto
+            direccion = Vector3.zero;
         }
     }
 
@@ -35,7 +37,9 @@ public class Enemigo : MonoBehaviour
         vida -= daño;
         if (vida <= 0)
         {
-            GameOverManager.instance.EnemigoDestruido();
+            if (GameOverManager.instance != null)
+                GameOverManager.instance.EnemigoDestruido();
+
             Destroy(gameObject);
         }
     }
@@ -49,7 +53,11 @@ public class Enemigo : MonoBehaviour
 
         if (other.CompareTag("navesita"))
         {
-            other.GetComponent<NaveController1>().RecibirDaño(1);
+            NaveController1 nave = other.GetComponent<NaveController1>();
+            if (nave != null)
+            {
+                nave.RecibirDaño(1);
+            }
             Destroy(gameObject);
         }
     }

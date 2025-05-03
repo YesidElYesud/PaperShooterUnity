@@ -181,4 +181,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 20
   vida: 3
+  offset: {x: 0, y: -50, z: 0}
   velocidadRotacion: 90

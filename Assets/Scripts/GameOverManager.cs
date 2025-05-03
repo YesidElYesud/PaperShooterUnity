@@ -1,12 +1,15 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro; // importante: incluye el namespace de TextMeshPro
 
 public class GameOverManager : MonoBehaviour
 {
     public static GameOverManager instance;
+
     public GameObject canvasFinal;
-    public Text textoConteo;
+    public TMP_Text textoConteo;
+    public TMP_Text textoConteoEnTiempoReal; // ahora es TMP_Text
+
     private int enemigosDestruidos = 0;
 
     void Awake()
@@ -18,6 +21,10 @@ public class GameOverManager : MonoBehaviour
     public void EnemigoDestruido()
     {
         enemigosDestruidos++;
+        if (textoConteoEnTiempoReal != null)
+        {
+            textoConteoEnTiempoReal.text = "Enemigos: " + enemigosDestruidos;
+        }
     }
 
     public void MostrarCanvasFinal()

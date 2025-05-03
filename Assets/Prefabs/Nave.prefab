@@ -167,8 +167,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 65
   balaPrefab: {fileID: 5243775077368849009, guid: c4b5e3a7f4bdfc04ea71ea234c0562b4, type: 3}
-  cohetePrefab: {fileID: 0}
+  cohetePrefab: {fileID: 8296939282268016130, guid: 08192508a809f9e4da4cdd01eefd6af1, type: 3}
   alaIzquierda: {fileID: 0}
   alaDerecha: {fileID: 0}
   centro: {fileID: 0}
   vida: 3
+  tiempoEntreDisparos: 0.3
+  tiempoRecargaCohete: 8
