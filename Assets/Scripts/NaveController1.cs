@@ -24,13 +24,13 @@ public class NaveController1 : MonoBehaviour, IDañable // 👈 IMPLEMENTAMOS LA
         float mov = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * mov * velocidad * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.UpArrow) && Time.time >= tiempoProximoDisparo)
+        if (Input.GetKey(KeyCode.W) && Time.time >= tiempoProximoDisparo)
         {
             DispararBala();
             tiempoProximoDisparo = Time.time + tiempoEntreDisparos;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && Time.time >= tiempoDisponibleCohete)
+        if (Input.GetKeyDown(KeyCode.S) && Time.time >= tiempoDisponibleCohete)
         {
             DispararCohete();
             tiempoDisponibleCohete = Time.time + tiempoRecargaCohete;

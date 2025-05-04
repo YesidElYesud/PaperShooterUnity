@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f7dc3a9ada25634eab96288e3ccc45f
+guid: 842a6999908d6ae41a88a0eaf7e9420c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,34 +108,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: paperFondo1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1587
-        height: 2245
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e037a614dc9e3d448d058ceb4343643
-      internalID: 187708001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 892fe2170f52fc84583a3abb79a1918a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -144,8 +122,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      paperFondo1_0: 187708001
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
