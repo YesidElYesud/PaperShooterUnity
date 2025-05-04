@@ -13,10 +13,16 @@ public class Bala : MonoBehaviour
     {
         if (collision.CompareTag("enemigo"))
         {
-            collision.GetComponent<Enemigo>().RecibirDaño(1);
-            Destroy(gameObject);
+            IDañable dañable = collision.GetComponent<IDañable>();
+            if (dañable != null)
+            {
+                dañable.RecibirDaño(1);
+                Destroy(gameObject);
+                return;
+            }
         }
-        else if (collision.CompareTag("pared"))
+
+        if (collision.CompareTag("pared"))
         {
             Destroy(gameObject);
         }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemigo : MonoBehaviour
+public class Enemigo : MonoBehaviour, IDañable
 {
     public float velocidad = 2f;
     public int vida = 3;
@@ -32,9 +32,9 @@ public class Enemigo : MonoBehaviour
         transform.Rotate(0, 0, velocidadRotacion * Time.deltaTime);
     }
 
-    public void RecibirDaño(int daño)
+    public void RecibirDaño(int cantidad)
     {
-        vida -= daño;
+        vida -= cantidad;
         if (vida <= 0)
         {
             if (GameOverManager.instance != null)

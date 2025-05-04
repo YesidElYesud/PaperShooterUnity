@@ -21,12 +21,14 @@ public class Cohete : MonoBehaviour
 
     void Explotar()
     {
-        Collider2D[] enemigos = Physics2D.OverlapCircleAll(transform.position, radioExplosion);
-        foreach (Collider2D c in enemigos)
+        Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, radioExplosion);
+        foreach (Collider2D c in objetos)
         {
-            if (c.CompareTag("enemigo"))
+            // Verifica si el objeto tiene un componente que implemente IDañable
+            IDañable dañable = c.GetComponent<IDañable>();
+            if (dañable != null)
             {
-                c.GetComponent<Enemigo>().RecibirDaño(999); // daño letal
+                dañable.RecibirDaño(999); // Daño letal
             }
         }
 
